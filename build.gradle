@@ -1,0 +1,21 @@
+apply plugin: 'java'
+
+dependencies {
+	compile 'org.slf4j:slf4j-api:1.7.5'
+    compile 'junit:junit:4.+'
+    compile 'com.codeborne:selenide:3.3'
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+	outputs.upToDateWhen { false }
+    testLogging.showStandardStreams = true 
+    systemProperties System.getProperties() 
+    
+    tasks.withType(Test) {
+	    maxParallelForks = Runtime.runtime.availableProcessors()
+	}
+}

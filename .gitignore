@@ -1,0 +1,6 @@
+/.gradle/2.6
+/build
+/bin/
+.gradle/
+.project
+.settings/
